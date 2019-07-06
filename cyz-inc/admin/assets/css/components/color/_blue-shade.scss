@@ -1,0 +1,142 @@
+body {
+  .bg-primary {
+    background-color: #00ACC1;
+  }
+
+  .bg-primary.dark-1 {
+    background-color: #008da0;
+  }
+
+  .bg-primary.dark-2 {
+    background-color: #006b79;
+  }
+
+  .bg-primary.light-1 {
+    background-color: #16bed4;
+  }
+
+  .bg-primary.light-2 {
+    background-color: #47d1e4;
+  }
+
+  .text-primary {
+    color: #00ACC1;
+  }
+
+  .text-primary.dark {
+    color: #006875;
+  }
+
+  .text-primary.light {
+    color: #47d1e4;
+  }
+
+  a.link {
+    color: #00ACC1;
+  }
+
+  a.link:hover {
+    color: #006875;
+    text-decoration: underline;
+  }
+
+  .btn-primary {
+    color: #fff;
+    background-color: #00ACC1;
+    border-color: #00ACC1;
+  }
+
+  .btn-primary:hover {
+    background-color: #008a9b;
+    border-color: #007f8e;
+  }
+
+  .btn-primary:focus,
+  .btn-primary:active,
+  .btn-primary.focus {
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 172, 193, 0.5);
+    box-shadow: 0 0 0 0.2rem rgba(0, 172, 193, 0.5);
+  }
+
+  .bg-secondary {
+    background-color: #546E7A;
+  }
+
+  .bg-danger {
+    background-color: #EF5350 !important;
+  }
+
+  .drawer.menu-open,
+  .navigation {
+    background-color: #546E7A;
+  }
+
+  .sub-menu,
+  .drop-down.opened {
+    background-color: rgba(0,0,0,0.15);
+  }
+
+  .sub-menu-item {
+    background: rgba(0,0,0,0.2);
+  }
+
+  .dropdown-icon.expand {
+    background-color: rgba(0,0,0,0.15);
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .menu.drop-down.opened {
+    .dropdown-icon.expand {
+      background-color: rgba(0,0,0,0.4);
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+
+  form {
+    .form-control {
+      color: #555;
+      background-color: #fff;
+      border-color: #ced4da;
+    }
+
+    .form-control:focus {
+      background-color: #fff;
+      outline: 0;
+      -webkit-box-shadow: 0 0 0 .2rem rgba(0, 171, 193, 0.3);
+      box-shadow: 0 0 0 .2rem rgba(0, 171, 193, 0.3);
+    }
+
+    .form-control::-webkit-input-placeholder,
+    .form-control::-ms-input-placeholder,
+    .form-control:-ms-input-placeholder,
+    .form-control::-webkit-input-placeholder {
+      color: #888;
+      opacity: 1
+    }
+
+    .form-control::-webkit-input-placeholder,
+    .form-control::-ms-input-placeholder,
+    .form-control:-ms-input-placeholder,
+    .form-control::placeholder {
+      color: #888;
+      opacity: 1
+    }
+
+    .text-muted {
+      color: #6c757d !important;
+    }
+  }
+
+  .tabbed {
+    .header-tabs{
+      >a.active{
+        font-weight: bold;
+        box-shadow: 0 -3px 0 0 #00ACC1 inset;
+      }
+      >a:hover, a:focus, a:active{
+        color: #00ACC1;
+        text-decoration: none;
+      }
+    }
+  }
+}
