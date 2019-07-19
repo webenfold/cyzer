@@ -121,10 +121,61 @@ function widget_drag(){
   dragula([document.getElementById('drag-able')]);
 }
 
+function notify(data, type){
+  console.log(data);
+
+  $('.no-notify').remove();
+
+  $('#notification-list').append('<tr class="alert" data-notify="' +
+  type + '"><td><span class="cyz-ico cyz-ico-alert"></span></td><td><a href="#">'
+  + data.replace("_", " ") + '</a></td></tr>');
+
+  $('.alert').on('click', function(){
+    if('update' == $(this).data('notify')){
+      window.location = core_update;
+    }
+  });
+}
 
 
-// Windows on load event
-window.addEventListener('load', function () {
+function check_update(){
+  var last_update_check = Cookies.get('CYZ_CU_LC');
+
+  if(last_update_check){
+    notify(last_update_check, 'update')
+  }
+  
+  else {
+    $.ajax({
+      url: manage_update_rep,
+      method: "POST",
+      data: {
+        key:  '1234',
+        action: "check-core-update"
+      }
+    }).done(function(result){
+
+      var data = JSON.parse(result);
+
+      if('update-available' == data['description']){
+        var msg = 'Update_Available_V_' + data['response'];
+      
+        Cookies.set('CYZ_CU_LC', msg, {expires: 1});
+
+        notify(msg, 'update');
+      }
+
+      else if('update-to-date' == data['description']){
+        Cookies.remove('CYZ_CU_LC');
+      }
+    }).fail(function(jqXHR, textStatus){
+      console.log("Request failed: " + textStatus);
+    });
+  }
+}
+
+
+function function_sequence() {
   try { custom_scrollbar(); } catch (err) {}
   try { hammer_int(); } catch (err) {}
   try { js_click(); } catch (err) {}
@@ -132,7 +183,21 @@ window.addEventListener('load', function () {
   try { widget_collapse(); } catch (err) {}
   try { widget_drag(); } catch (err) {}
 
-  try { function_sequence(); } catch (err) {}
-
   try { jdb_get_db(); } catch (err) {}
-});
+
+  try { check_update(); } catch (err) {}
+}
+
+
+// =========================================================
+// On Load
+// =========================================================
+if (window.addEventListener) {
+  window.addEventListener('load', function () {
+    function_sequence();
+  });
+} else {
+  window.attachEvent('onload', function () {
+    function_sequence();
+  });
+}

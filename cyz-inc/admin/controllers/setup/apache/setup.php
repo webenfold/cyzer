@@ -9,7 +9,7 @@
 
 
 /** Include URL Fetcher to fetch URLs */
-require_once(CYZ_LIB.'/file-management/main.php');
+require_once(CYZ_LIB.'/file-op/file-op.php');
 
 
 /** Get Rewrite base */
@@ -73,10 +73,10 @@ function cyz_create_htaccess(){
   $apache_filename = '.htaccess';
 
   /** File Operator Object */
-  $file_worker = new cyz_file_operator();
+  $file_worker = new cyz_file_op();
 
   /** Check write permission */
-  $is_dir_writeable = $file_worker->has_write_permission($apache_dir);
+  $is_dir_writeable = $file_worker->writeable($apache_dir);
 
   /** Check if directory is writeable */
   if(!$is_dir_writeable['status']) return [
@@ -85,10 +85,9 @@ function cyz_create_htaccess(){
   ];
   
   /** Create new/update htaccess file */
-  $htaccess_updated = $file_worker->cyz_update_file(
-    $apache_dir,          // Apache htaccess Default Location
-    $apache_filename,     // Htaccess file name
-    $htaccess_content     // Htaccess content
+  $htaccess_updated = $file_worker->update_file(
+    $apache_dir.$apache_filename,
+    $htaccess_content
   );
 
   /** Htaccess file has been updated */

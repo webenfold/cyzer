@@ -95,7 +95,7 @@ function update_view_instances($name){
   $new_db_data = array();
 
   foreach($all_views as $key => $view){
-    $result = read_header_comment($view['file_loc'], array("View", "Name", "Date Create", "Date Updated"));
+    $result = CYZ_phrase::file_comments($view['file_loc'], array("View", "Name", "Date Create", "Date Updated"));
 
     if($name == $result['View']){
 

@@ -8,6 +8,15 @@ $resource_dir = get_admin_assets_dir_url(); ?>
 
     <div class="container-fluid py-6 px-4">
 
+      <div class="alerts-list">
+        <div class="alert alert-warning alert-dismissible fade show my-3" role="alert">
+          <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+
       <div class="mb-6">
         <h1 class="page-header p-3">
           <span>Dashboard</span>
@@ -135,4 +144,7 @@ $resource_dir = get_admin_assets_dir_url(); ?>
   </div>
 
   <div id="swipe-h"></div>
+
+  <!-- Attach Display Footer -->
+  <?php insert_template('/templates/footer/display-footer.php', null, true); ?>
 </div>

@@ -1,7 +1,6 @@
 <?php
 /**
  * Name:            Cyzer URL Rewrite
- * Version:         1.0.0
  * Description:     This contains URL Rewrite logic.
  * 
  * @package:        Cyzer Core

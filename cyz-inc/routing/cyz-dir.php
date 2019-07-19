@@ -1,9 +1,9 @@
 <?php
 /**
- * Cyzer path definition
- * Contains global path defined variable
+ * Name:            Cyzer path definition
+ * Description:     Contains global path defined variable
  *
- * @package Cyzer
+ * @package:        Cyzer Core
  */
 
 

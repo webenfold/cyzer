@@ -143,7 +143,7 @@ function deployment_select() {
   $('.select-deployment').on('click', function () {
     $('.select-deployment').removeClass('selected');
     $(this).addClass('selected');
-    $.cookie('deployment_selected', $(this).data('deploy'), {
+    Cookies.set('deployment_selected', $(this).data('deploy'), {
       expires: 4
     });
     $('#nb-deployment').removeClass('disabled');
@@ -155,7 +155,7 @@ function deployment_select() {
 function monitor_slick() {
   $('.slider-for').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
     if ('1' == nextSlide) {
-      var deployment_selected = $.cookie('deployment_selected');
+      var deployment_selected = Cookies.get('deployment_selected');
 
       $('#nb-deployment').addClass('disabled');
 

@@ -2,7 +2,7 @@
 
 
 /** Include URL Fetcher to fetch URLs */
-include_once(CYZ_LIB.'/file-management/main.php');
+include_once(CYZ_LIB.'/file-op/file-op.php');
 
 
 /** Get Config File Content */
@@ -46,10 +46,10 @@ function cyz_create_su_config_file(){
   $config_filename = 'su-config.php';
 
   /** File Operator Object */
-  $file_worker = new cyz_file_operator();
+  $file_worker = new cyz_file_op();
 
   /** Check write permission */
-  $is_dir_writeable = $file_worker->has_write_permission($config_dir);
+  $is_dir_writeable = $file_worker->writeable($config_dir);
 
   /** Check if directory is writeable */
   if(!$is_dir_writeable['status']) return [
@@ -58,10 +58,9 @@ function cyz_create_su_config_file(){
   ];
   
   /** Create new/update htaccess file */
-  $config_file_updated = $file_worker->cyz_update_file(
-    $config_dir,        // Apache htaccess Default Location
-    $config_filename,   // Htaccess file name
-    $config_content     // Htaccess content
+  $config_file_updated = $file_worker->update_file(
+    $config_dir.$config_filename,
+    $config_content
   );
 
   /** Htaccess file has been updated */

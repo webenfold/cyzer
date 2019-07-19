@@ -1,4 +1,11 @@
 <?php
+/**
+ * Name:            Cyzer Redirect Junction
+ * Description:     Separating URL for su panel and application
+ *
+ * @package:        Cyzer Core
+ */
+
 
 // Get Slug Array From Request URI
 $slug_array_raw = explode('/', get_current_slug());

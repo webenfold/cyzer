@@ -1,15 +1,15 @@
 # CYZER - MVC Driven PHP Framework.
-Cyzer is an OSS (Open Source Software). It is minimalistic build PHP Framework for all types of modern application. It follows MVC (Model View Controller) architecture.
+Cyzer is an OSS (Open Source Software). It is a minimalistic build PHP Framework for all types of modern application. It follows the MVC (Model View Controller) architecture.
 
 ## Preamble
 
-Cyzer is build create all types of web sites to super powerful web applications. It has minimal inbuilt functionality. Every functionality is carefully selected to just provide a bare bone-structure for your project. Minimalistic framework structure helps the application build over cyzer to consume low server resource and provide better performance to end user.
+Cyzer is built to create all types of web sites to super powerful web applications. It has minimal inbuilt functionality. Every functionality is carefully selected to just provide a bare bone-structure for your project. Minimalistic framework structure helps the application build over Cyzer to consume low server resource and provide better performance to end-user.
 
-Cyzer needs no extra juice! It is compatible with almost all web server as it requires PHP, my SQL and Apache to run. It is light weight, so any LAMP server can run Cyzer.
+Cyzer needs no extra juice! It is compatible with almost all web server as it requires PHP, my SQL and Apache to run. It is lightweight, so any LAMP server can run Cyzer.
 
-Cyzer supports addons. You add additional functionalities for your cyzer application by installing addons / plugins AKA (also known as) external controllers. You can install official, self created or 3rd party addons for your project. These addons extend cyzer functionalities and makes your application modular. Cyzer addons supports export, import, editing and update functionality directly from SU (Super User) Panel.
+Cyzer supports add-ons. You add additional functionalities for your Cyzer application by installing addons/plugins AKA (also known as) external controllers. You can install official, self-created or 3rd party addons for your project. These add-ons extend Cyzer functionalities and make your application modular. Cyzer addons support export, import, editing and update functionality directly from SU (Super User) Panel.
 
-Cyzer is secure by default. But you can follow the below listed tips for better security
+Cyzer is secure by default. But you can follow the below-listed tips for better security
   - Do Not Install 3rd Party (UnTrusted) Addons
   - Enable Automatic Updates
   - Use VPS (Virtual Private Server)
@@ -41,13 +41,17 @@ Typical, but worth mentioning
 |Variables                      |Lower cased separated with underscored (**$file_system**)                                                             |
 |Global variables               |All upper case and underscored (**$GLOBAL_VARIABLE**)                                                                 |
 |Instances variables / Objects  |Suffix **_obj** (**$file_operator_obj**)                                                                              |
-|Reserved variables             |Prefix **cyz_** (**$cyz_file_operator_obj**)                                                                          |
+|Reserved variables             |Prefix **cyz_** (**$cyz_file_op_obj**)                                                                          |
 |Array                          |Lower cased separated with underscored (**array('the_key'=>'the_value')**)                                            |
 |Constants                      |All upper case and underscored (**THE_CONSTANT_VAR**)                                                                 |
 |Classes                        |Camel case / Pascal case (Note that, when using camel case, the initial character is upper case) (**FileOperator**)   |
 |Methods                        |Lower cased separated with underscored (**the_function()**)                                                           |
 
 ## Update Log
+
+### V 1.0.0 - Alpha Build 1.0.6 - build 2
+1. Added Static Objects - Phrase Object, CURL Object
+2. Update Logic Modified - This release is only for testing
 
 ### V 1.0.0 - Alpha Build 1.0.6 - build 1
 1. Architecture Modified

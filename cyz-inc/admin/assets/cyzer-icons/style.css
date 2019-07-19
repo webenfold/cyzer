@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'cyzer-icons';
-  src:  url('fonts/cyzer-icons.eot?momzpe');
-  src:  url('fonts/cyzer-icons.eot?momzpe#iefix') format('embedded-opentype'),
-    url('fonts/cyzer-icons.ttf?momzpe') format('truetype'),
-    url('fonts/cyzer-icons.woff?momzpe') format('woff'),
-    url('fonts/cyzer-icons.svg?momzpe#cyzer-icons') format('svg');
+  src:  url('fonts/cyzer-icons.eot?i0vmla');
+  src:  url('fonts/cyzer-icons.eot?i0vmla#iefix') format('embedded-opentype'),
+    url('fonts/cyzer-icons.ttf?i0vmla') format('truetype'),
+    url('fonts/cyzer-icons.woff?i0vmla') format('woff'),
+    url('fonts/cyzer-icons.svg?i0vmla#cyzer-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -34,6 +34,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.cyz-ico-check:before {
+  content: "\e876";
+}
+.cyz-ico-alert:before {
+  content: "\e645";
+}
 .cyz-ico-refresh:before {
   content: "\e5d5";
 }

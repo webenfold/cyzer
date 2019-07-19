@@ -25,6 +25,8 @@
     var icons;
     if (!supportsProperty('fontFeatureSettings')) {
         icons = {
+            'done': '&#xe876;',
+            'priority_high': '&#xe645;',
             'refresh': '&#xe5d5;',
             'error': '&#xe000;',
             'error_outline': '&#xe001;',

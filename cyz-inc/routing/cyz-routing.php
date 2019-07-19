@@ -1,7 +1,6 @@
 <?php
 /**
  * Name:            Cyzer Routing
- * Version:         1.0.0
  * Description:     This file routes the defined URL and
  *                  associates with the corresponding view
  *                  instance

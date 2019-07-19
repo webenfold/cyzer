@@ -1,7 +1,7 @@
 <?php
 
 function enable_maintenance(){
-  $file_op = new cyz_file_operator;
+  $file_op = new cyz_file_op;
 
   // Backup index.php
   $backup = $file_op->copy_file('/index.php', '/cyz-gen/backup/index.php.back');
@@ -16,7 +16,7 @@ function enable_maintenance(){
 }
 
 function disable_maintenance(){
-  $file_op = new cyz_file_operator;
+  $file_op = new cyz_file_op;
 
   // Backup index.php
   $copy = $file_op->copy_file('/cyz-gen/backup/index.php.back', '/index.php');

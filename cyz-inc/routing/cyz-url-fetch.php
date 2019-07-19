@@ -1,8 +1,7 @@
 <?php
 /**
  * Name:            Cyzer URL Fetch
- * Version:         1.0.0
- * Description:     This fetches common URLs
+ * Description:     This fetches Most Used URLs
  * 
  * @package:        Cyzer Core
  */

@@ -9,8 +9,7 @@
 
 
 /** Attach Install View Header */
-insert_template('/instances/setup/templates/header/header.php', null, true);
-
+insert_template('/templates/general/head.php', null, true);
 
 
 /** Check Get Parameter
@@ -23,8 +22,7 @@ if(isset($_GET['setup'])):
   if($_GET['setup'] == 'error'):
 
     /** Get Welcome View Instance Template */
-    insert_template('/instances/setup/templates/body/error.php', null, true);
-
+    insert_template('/instances/setup/body/error.php', null, true);
 
 
 
@@ -36,7 +34,6 @@ if(isset($_GET['setup'])):
 
 
 
-
   /** Setup Database */
   elseif($_GET['setup'] == 'db'):
     /** Include DB Setup script 
@@ -45,8 +42,7 @@ if(isset($_GET['setup'])):
     attach_controller('/setup/db/setup.php', 'cyz_admin');
 
     /** Show DB Setup view after processing post request */
-    insert_template('/instances/setup/templates/body/db-setup.php', null, true);
-
+    insert_template('/instances/setup/body/db-setup.php', null, true);
 
 
 
@@ -60,24 +56,21 @@ if(isset($_GET['setup'])):
     * on form submit - during installation */
   attach_controller('/setup/su/setup.php', 'cyz_admin');
 
-  /** Show DB Setup view after processing post request */
-  insert_template('/instances/setup/templates/body/su-setup.php', null, true);
 
+  /** Show DB Setup view after processing post request */
+  insert_template('/instances/setup/body/su-setup.php', null, true);
 
 
    // End If Statement
   endif;
 
 
-
 /** If there is no GET parameter */
 else:
   
   
-  
   /** Get Welcome View Instance Template */
-  insert_template('/instances/setup/templates/body/welcome.php', null, true);
-
+  insert_template('/instances/setup/body/welcome.php', null, true);
 
 
 // End If Statement
@@ -85,4 +78,4 @@ endif;
 
 
 /** Get Footer */
-insert_template('/instances/setup/templates/footer/footer.php', null, true);
+insert_template('/templates/general/footer.php', null, true);
