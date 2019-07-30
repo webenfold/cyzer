@@ -133,7 +133,9 @@ function refresh_view(){
 
 
 
-function function_sequence(){
+function view_specific_function(){
+  console.log('I Ran');
+
   try { get_views(); } catch (err) {}
   try { refresh_view(); } catch (err) {}
   // try { application_upload_form(); } catch (err) {}

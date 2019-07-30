@@ -138,7 +138,10 @@ function notify(data, type){
 }
 
 
-function check_update(){
+function cyz_core_update(action = null){
+
+  if(!action) action = "check-core-update";
+
   var last_update_check = Cookies.get('CYZ_CU_LC');
 
   if(last_update_check){
@@ -151,22 +154,26 @@ function check_update(){
       method: "POST",
       data: {
         key:  '1234',
-        action: "check-core-update"
+        action: action
       }
     }).done(function(result){
 
-      var data = JSON.parse(result);
+      if("check-core-update" == action){
+        var data = JSON.parse(result);
 
-      if('update-available' == data['description']){
-        var msg = 'Update_Available_V_' + data['response'];
-      
-        Cookies.set('CYZ_CU_LC', msg, {expires: 1});
-
-        notify(msg, 'update');
-      }
-
-      else if('update-to-date' == data['description']){
-        Cookies.remove('CYZ_CU_LC');
+        if('update-available' == data['description']){
+          var msg = 'Update_Available_V_' + data['response'];
+        
+          Cookies.set('CYZ_CU_LC', msg, {expires: 1});
+  
+          notify(msg, 'update');
+        }
+  
+        else if('update-to-date' == data['description']){
+          Cookies.remove('CYZ_CU_LC');
+        }
+      } else {
+        
       }
     }).fail(function(jqXHR, textStatus){
       console.log("Request failed: " + textStatus);
@@ -182,10 +189,9 @@ function function_sequence() {
   try { sn_dd(); } catch (err) {}
   try { widget_collapse(); } catch (err) {}
   try { widget_drag(); } catch (err) {}
-
   try { jdb_get_db(); } catch (err) {}
-
-  try { check_update(); } catch (err) {}
+  try { cyz_core_update(); } catch (err) {}
+  try { view_specific_function(); } catch (err) {}
 }
 
 

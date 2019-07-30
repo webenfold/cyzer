@@ -52,6 +52,7 @@ Typical, but worth mentioning
 ### V 1.0.0 - Alpha Build 1.0.6 - build 2
 1. Added Static Objects - Phrase Object, CURL Object
 2. Update Logic Modified - This release is only for testing
+3. SU Panel UI Reset - Bootstrap Reset
 
 ### V 1.0.0 - Alpha Build 1.0.6 - build 1
 1. Architecture Modified

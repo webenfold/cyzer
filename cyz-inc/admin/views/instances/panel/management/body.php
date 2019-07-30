@@ -1,4 +1,15 @@
-<?php $response = check_cyzer_update(); ?>
+<?php
+
+$response = check_cyzer_update();
+
+$cyzer_up_db = new CYZ_JDB(CYZ_GEN.'/jdb/');
+
+$cyzer_up_db->db_init('cyz_update');
+
+$cur_upd_status = $cyzer_up_db->get_column_data('core_updates', 0, 'update-status');
+
+if(!$cur_upd_status) $cur_upd_status = "download-core-update";
+?>
 
 <div id="body-container" class="body-container transition bg-secondary">
   <div class="body-content nice-scroll bg-light-grey">
@@ -24,7 +35,7 @@
             <div class="col-lg-10 col-sm-12">
               <p><span>New version of Cyzer (V <?php echo $response[1]; ?>) is available. You have outdated Cyzer (V <?php echo CYZ_VERSION; ?>). Update Cyzer now for better security.</span></p>
               <p class="mt-4">
-                <a class="btn cta-primary btn-rounded px-2" href="<?php echo get_home_url().'/?setup=apache'; ?>">Download And Install Update</a>
+                <a class="btn cta-primary btn-rounded px-2 cyz-update" href="#" data-update="<?php echo $cur_upd_status; ?>">Download And Install Update</a>
               </p>
             </div>
           </div>
@@ -51,5 +62,5 @@
   <div id="swipe-h"></div>
 
   <!-- Attach Display Footer -->
-  <?php insert_template('/templates/footer/display-footer.php', null, true); ?>
+  <?php insert_template('/templates/su-panel/sub-footer.php', null, true); ?>
 </div>

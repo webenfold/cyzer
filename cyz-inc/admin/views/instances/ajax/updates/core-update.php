@@ -68,7 +68,7 @@ if(!empty($_POST['key']) && !empty($_POST['action'])){
 
       $cyzer_up_db->update_column_data('core_updates', 0, 'update-status', 'core-update-downloaded');
 
-      echo_result('Core Update Downloaded', 'blank');
+      echo_result('core-update-downloaded', 'blank');
     }
   }
 
